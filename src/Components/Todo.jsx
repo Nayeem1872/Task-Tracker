@@ -29,6 +29,7 @@ const [running, setRunning] = useState(false)
     setTaskList ((currentTasks => currentTasks.filter
     (todo => todo.id!==itemID)))
   }
+  
 
 
 
@@ -55,16 +56,18 @@ const [running, setRunning] = useState(false)
 
           </div>
           <div className='py-4 flex flex-row justify-evenly gap-4'>
-              {running ? (<button className='border rounded-lg bg-rose-400 py-1 px-3'>
+              {running ? (
+              
+              <button className='border rounded-lg bg-rose-400 py-1 px-3' onClick={()=>{setRunning(false)}}>
                 Stop
               
-              </button>):(<button className='border rounded-lg bg-lime-400  py-1 px-3'>
+              </button>):(<button className='border rounded-lg bg-lime-400  py-1 px-3' onClick={()=>{setRunning(true)}}>
               
               Start
               </button>
                 
                 )}
-                <button className='border rounded-lg py-1 px-3 bg-cyan-400 hover:opacity-90 hover:duration-100'> Reset </button>
+                <button className='border rounded-lg py-1 px-3 bg-cyan-400 hover:opacity-90 hover:duration-100' onClick={()=>{setTime(0)}}> Reset </button>
               
 
           </div>
